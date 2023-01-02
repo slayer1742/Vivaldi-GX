@@ -1,3 +1,7 @@
+#switch {
+    contain: none;
+}
+
 #switch>button:focus:not(active) {
     background-color: var(--colorBg) !important;
 }
@@ -8,9 +12,13 @@
     border-right: none !important;
 }
 
+#panels {
+    position: relative;
+}
+
 #panels #switch {
-    margin-left    : 3px !important;
-    margin-bottom  : 40px !important;
+    /* margin-left    : 3px !important; */
+    /* margin-bottom  : 40px !important; */
     backdrop-filter: none !important;
 }
 
@@ -18,6 +26,10 @@
     overflow-y: auto;
     max-width : 100%;
     overflow-x: hidden;
+}
+
+#panels:not(.leak) #switch::-webkit-scrollbar {
+    display: none;
 }
 
 #panels.leak #switch>div.addwebpanel-wrapper {
@@ -35,11 +47,11 @@
 
 #panels #switch>button:not(:last-of-type),
 #panels #switch>div {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 #panels-container:not(.overlay):not([style*="width: 0px;"]) {
-    min-width   : 40px !important;
+    /* min-width   : 40px !important; */
     border-right: none !important;
 }
 
@@ -48,8 +60,8 @@
 }
 
 #panels-container:not(.overlay) .panel-group {
-    margin-left  : 3px !important;
     border-top   : 1px solid var(--colorHighlightBg) !important;
+    border-right   : 1px solid var(--colorHighlightBg) !important;
     border-bottom: none !important;
 }
 
@@ -242,10 +254,10 @@
     box-shadow: none !important;
 }
 
-#panels-container:not([style*="width: 0px;"])::before {
+/* #panels-container:not([style*="width: 0px;"])::before {
     content        : " ";
     backdrop-filter: var(--backgroundBlur);
     width          : 40px;
     height         : 100%;
     position       : fixed;
-}
+} */
